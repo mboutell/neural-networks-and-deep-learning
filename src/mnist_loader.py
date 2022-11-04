@@ -11,7 +11,7 @@ function usually called by our neural network code.
 #### Libraries
 # Standard library
 # import cPickle # python 2
-import _pickle as cPickle # python3, but giving error with: python pickle unicodedecodeerror 'ascii' codec
+import _pickle as cPickle # Python 3 also requires other change in this diff 
 import gzip
 
 # Third-party libraries
