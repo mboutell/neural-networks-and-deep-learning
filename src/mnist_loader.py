@@ -10,7 +10,8 @@ function usually called by our neural network code.
 
 #### Libraries
 # Standard library
-import cPickle
+# import cPickle # python 2
+import _pickle as cPickle # python3, but giving error with: python pickle unicodedecodeerror 'ascii' codec
 import gzip
 
 # Third-party libraries
@@ -40,7 +41,7 @@ def load_data():
     below.
     """
     f = gzip.open('../data/mnist.pkl.gz', 'rb')
-    training_data, validation_data, test_data = cPickle.load(f)
+    training_data, validation_data, test_data = cPickle.load(f, encoding="latin1")
     f.close()
     return (training_data, validation_data, test_data)
 
